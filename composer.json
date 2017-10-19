@@ -1,0 +1,20 @@
+{
+  "name": "hising/chewer",
+  "description": "Library for importing products from a wide variety of different types of feeds",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mattias Hising",
+      "email": "hising@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "fabpot/goutte": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chewer\\": "src/"
+    }
+  }
+}
