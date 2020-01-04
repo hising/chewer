@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "format:php": "prettier src/*.php --write --parser=php"
+    "format:php": "prettier src/*.php --write --parser=php",
+    "prettier-test": "prettier src/*.php --parser=php"
   },
   "repository": {
     "type": "git",
