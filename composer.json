@@ -1,11 +1,11 @@
 {
-  "name": "hising/chewer",
-  "description": "Library for importing products from a wide variety of different types of feeds",
+  "name": "yetric/chewer",
+  "description": "PHP (7.3+) Library for importing products from a wide variety of different types of feeds",
   "license": "MIT",
   "authors": [
     {
       "name": "Mattias Hising",
-      "email": "hising@gmail.com"
+      "email": "mattias@yetric.com"
     }
   ],
   "require": {
