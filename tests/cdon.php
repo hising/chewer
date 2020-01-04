@@ -14,6 +14,6 @@ $platformNames = [
 
 $cdon = new Cdon();
 
-$cdon->games()->import(function (CdonProduct $product) {
+$cdon->games()->import(static function (CdonProduct $product) {
     echo($product->toJson());
 }, ['platform' => '/' . implode("|", $platformNames) . '/i']);
