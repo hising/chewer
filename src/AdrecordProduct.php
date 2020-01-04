@@ -6,8 +6,8 @@ namespace Chewer;
  * Class AdrecordProduct
  * @package Chewer
  */
-class AdrecordProduct extends Product {
-
+class AdrecordProduct extends Product
+{
     private $brand, $categories;
 
     public $crawler;
@@ -15,7 +15,8 @@ class AdrecordProduct extends Product {
     /**
      * @param $callback
      */
-    public function crawl ($callback) {
+    public function crawl($callback)
+    {
         $this->crawler = $this->client->request('GET', $this->getUrl());
         call_user_func_array($callback, [$this->crawler]);
     }

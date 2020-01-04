@@ -2,8 +2,9 @@
 
 namespace Chewer;
 
-class Adtraction {
-    public function __construct($feed, $options = []) {
-
+class Adtraction
+{
+    public function __construct($feed, $options = [])
+    {
     }
 }

@@ -2,23 +2,23 @@
 
 namespace Chewer;
 
-class AdrecordJson {
+class AdrecordJson
+{
     private $feed;
 
-    public function __construct($feed) {
+    public function __construct($feed)
+    {
         $this->feed = $feed;
     }
 
-    public function import ($callback, $filter = []) {
-        $json = json_decode(file_get_contents($this->feed));
-        foreach($json->products as $product) {
-
-
-            $is_filtered_product = True;
-
+    public function import($callback, $filter = [])
+    {
+        $json = json_decode(file_get_contents($this->feed), false, 512, JSON_THROW_ON_ERROR);
+        foreach ($json->products as $product) {
+            $is_filtered_product = true;
             foreach ($filter as $prop => $search) {
                 if (!preg_match($search, $product->{$prop})) {
-                    $is_filtered_product = False;
+                    $is_filtered_product = false;
                     break;
                 }
             }

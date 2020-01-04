@@ -6,8 +6,8 @@ namespace Chewer;
  * Class TradedoublerProduct
  * @package Chewer
  */
-class TradedoublerProduct extends Product {
-
+class TradedoublerProduct extends Product
+{
     private $brand, $categories;
 
     /**
@@ -46,7 +46,8 @@ class TradedoublerProduct extends Product {
     /**
      * @param $callback
      */
-    public function crawl ($callback) {
+    public function crawl($callback)
+    {
         $this->crawler = $this->client->request('GET', $this->getUrl());
         call_user_func_array($callback, [$this->crawler]);
     }

@@ -6,8 +6,8 @@ namespace Chewer;
  * Class CdonProduct
  * @package Chewer
  */
-class CdonProduct extends Product {
-
+class CdonProduct extends Product
+{
     private $releaseDate, $bookable;
 
     /**
@@ -46,7 +46,8 @@ class CdonProduct extends Product {
     /**
      * @param $callback
      */
-    public function crawl ($callback) {
+    public function crawl($callback)
+    {
         $this->crawler = $this->client->request('GET', $this->getUrl());
         call_user_func_array($callback, [$this->crawler]);
     }

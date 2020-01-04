@@ -2,10 +2,11 @@
 
 namespace Chewer;
 
-class Adrecord {
-
+class Adrecord
+{
     private $parser;
-    public function __construct($feed) {
+    public function __construct($feed)
+    {
         $extension = explode('?', pathinfo($feed, PATHINFO_EXTENSION))[0];
 
         switch ($extension) {
@@ -16,12 +17,10 @@ class Adrecord {
                 $this->parser = new AdrecordXML($feed);
                 break;
         }
-
     }
 
-    public function import ($callback, $filter = []) {
+    public function import($callback, $filter = [])
+    {
         $this->parser->import($callback, $filter);
     }
 }
-
-

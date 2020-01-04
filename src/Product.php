@@ -7,9 +7,27 @@ use Goutte\Client;
  * Class Product
  * @package Chewer
  */
-class Product {
-    public $name, $type, $sellerId, $ean, $supplierId, $price, $oldPrice, $freight, $deliveryTime, $url, $inStock,
-        $thumbnail, $image, $bigImage, $description, $fields, $currency, $brand, $program;
+class Product
+{
+    public $name,
+        $type,
+        $sellerId,
+        $ean,
+        $supplierId,
+        $price,
+        $oldPrice,
+        $freight,
+        $deliveryTime,
+        $url,
+        $inStock,
+        $thumbnail,
+        $image,
+        $bigImage,
+        $description,
+        $fields,
+        $currency,
+        $brand,
+        $program;
 
     protected $client;
 
@@ -17,7 +35,8 @@ class Product {
      * Product constructor.
      * @param array $properties
      */
-    public function __construct(array $properties = []) {
+    public function __construct(array $properties = [])
+    {
         foreach ($properties as $key => $value) {
             $this->{$key} = $value;
         }
@@ -331,5 +350,4 @@ class Product {
     {
         return json_encode($this);
     }
-
 }

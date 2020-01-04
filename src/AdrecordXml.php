@@ -2,14 +2,17 @@
 
 namespace Chewer;
 
-class AdrecordXML {
+class AdrecordXML
+{
     private $feed;
 
-    public function __construct($feed) {
+    public function __construct($feed)
+    {
         $this->feed = $feed;
     }
 
-    public function import ($callback, $filter = []) {
+    public function import($callback, $filter = [])
+    {
         die("parse xml");
     }
 }
