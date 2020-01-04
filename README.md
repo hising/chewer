@@ -1,4 +1,7 @@
 # Chewer
+
+[![CircleCI](https://circleci.com/gh/hising/chewer.svg?style=svg)](https://circleci.com/gh/hising/chewer)
+
 import products from a wide variety of different types of feeds
 
 ## Get started
