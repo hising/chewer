@@ -54,7 +54,7 @@ class Product
     /**
      * @param mixed $name
      */
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
@@ -86,7 +86,7 @@ class Product
     /**
      * @param mixed $sellerId
      */
-    public function setSellerId($sellerId)
+    public function setSellerId($sellerId): void
     {
         $this->sellerId = $sellerId;
     }
@@ -102,7 +102,7 @@ class Product
     /**
      * @param mixed $ean
      */
-    public function setEan($ean)
+    public function setEan($ean): void
     {
         $this->ean = $ean;
     }
@@ -118,7 +118,7 @@ class Product
     /**
      * @param mixed $supplierId
      */
-    public function setSupplierId($supplierId)
+    public function setSupplierId($supplierId): void
     {
         $this->supplierId = $supplierId;
     }
@@ -134,7 +134,7 @@ class Product
     /**
      * @param mixed $price
      */
-    public function setPrice($price)
+    public function setPrice($price): void
     {
         $this->price = $price;
     }
@@ -150,7 +150,7 @@ class Product
     /**
      * @param mixed $oldPrice
      */
-    public function setOldPrice($oldPrice)
+    public function setOldPrice($oldPrice): void
     {
         $this->oldPrice = $oldPrice;
     }
@@ -166,7 +166,7 @@ class Product
     /**
      * @param mixed $freight
      */
-    public function setFreight($freight)
+    public function setFreight($freight): void
     {
         $this->freight = $freight;
     }
@@ -182,7 +182,7 @@ class Product
     /**
      * @param mixed $deliveryTime
      */
-    public function setDeliveryTime($deliveryTime)
+    public function setDeliveryTime($deliveryTime): void
     {
         $this->deliveryTime = $deliveryTime;
     }
@@ -198,7 +198,7 @@ class Product
     /**
      * @param mixed $url
      */
-    public function setUrl($url)
+    public function setUrl($url): void
     {
         $this->url = $url;
     }
@@ -214,7 +214,7 @@ class Product
     /**
      * @param mixed $inStock
      */
-    public function setInStock($inStock)
+    public function setInStock($inStock): void
     {
         $this->inStock = $inStock;
     }
@@ -230,7 +230,7 @@ class Product
     /**
      * @param mixed $thumbnail
      */
-    public function setThumbnail($thumbnail)
+    public function setThumbnail($thumbnail): void
     {
         $this->thumbnail = $thumbnail;
     }
@@ -246,7 +246,7 @@ class Product
     /**
      * @param mixed $image
      */
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -262,7 +262,7 @@ class Product
     /**
      * @param mixed $bigImage
      */
-    public function setBigImage($bigImage)
+    public function setBigImage($bigImage): void
     {
         $this->bigImage = $bigImage;
     }
@@ -278,7 +278,7 @@ class Product
     /**
      * @param mixed $description
      */
-    public function setDescription($description)
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
@@ -294,7 +294,7 @@ class Product
     /**
      * @param mixed $fields
      */
-    public function setFields($fields)
+    public function setFields($fields): void
     {
         $this->fields = $fields;
     }
@@ -310,7 +310,7 @@ class Product
     /**
      * @param mixed $currency
      */
-    public function setCurrency($currency)
+    public function setCurrency($currency): void
     {
         $this->currency = $currency;
     }
@@ -326,7 +326,7 @@ class Product
     /**
      * @param mixed $brand
      */
-    public function setBrand($brand)
+    public function setBrand($brand): void
     {
         $this->brand = $brand;
     }
@@ -341,13 +341,38 @@ class Product
     /**
      * @param mixed $program
      */
-    public function setProgram($program)
+    public function setProgram($program): void
     {
         $this->program = $program;
     }
 
     public function toJson()
     {
-        return json_encode($this);
+        return json_encode($this->toArray(), JSON_THROW_ON_ERROR, 512);
+    }
+
+    public function toArray()
+    {
+        return [
+            'name' => $this->name,
+            'type' => $this->type,
+            'sellerId' => $this->sellerId,
+            'ean' => $this->ean,
+            'supplierId' => $this->supplierId,
+            'price' => $this->price,
+            'oldPrice' => $this->oldPrice,
+            'freight' => $this->freight,
+            'deliveryTime' => $this->deliveryTime,
+            'url' => $this->url,
+            'inStock' => $this->inStock,
+            'thumbnail' => $this->thumbnail,
+            'image' => $this->image,
+            'bigImage' => $this->bigImage,
+            'description' => $this->description,
+            'fields' => $this->fields,
+            'currency' => $this->currency,
+            'brand' => $this->brand,
+            'program' => $this->program
+        ];
     }
 }
